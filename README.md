@@ -1,8 +1,8 @@
 # German Electricity Price Forecasting Pipeline
 
-![German electricity forecasting project cover](docs/project-cover.png)
+![German electricity forecasting workflow](docs/workflow-infographic.png)
 
-*Conceptual project illustration; chart values are illustrative.*
+*Illustrated batch workflow; chart values are illustrative. See the architecture diagram and design documentation for implementation details.*
 
 [![Tests](https://github.com/heyiamwahab236/german-electricity-forecasting-pipeline/actions/workflows/tests.yml/badge.svg)](https://github.com/heyiamwahab236/german-electricity-forecasting-pipeline/actions/workflows/tests.yml)
 
