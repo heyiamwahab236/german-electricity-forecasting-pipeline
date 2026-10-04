@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="936pt" height="324pt" viewBox="0 0 936 324" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-10-04T16:09:14.406285</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 324 
+L 936 324 
+L 936 0 
+L 0 0 
+z
+" style="fill: #f8fafc"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 22.405846 180.6816 
+L 159.241846 180.6816 
+Q 164.855631 180.6816 164.855631 175.344 
+L 164.855631 95.28 
+Q 164.855631 89.9424 159.241846 89.9424 
+L 22.405846 89.9424 
+Q 16.792062 89.9424 16.792062 95.28 
+L 16.792062 175.344 
+Q 16.792062 180.6816 22.405846 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 173.978031 180.6816 
+L 310.814031 180.6816 
+Q 316.427815 180.6816 316.427815 175.344 
+L 316.427815 95.28 
+Q 316.427815 89.9424 310.814031 89.9424 
+L 173.978031 89.9424 
+Q 168.364246 89.9424 168.364246 95.28 
+L 168.364246 175.344 
+Q 168.364246 180.6816 173.978031 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 325.550215 180.6816 
+L 462.386215 180.6816 
+Q 468 180.6816 468 175.344 
+L 468 95.28 
+Q 468 89.9424 462.386215 89.9424 
+L 325.550215 89.9424 
+Q 319.936431 89.9424 319.936431 95.28 
+L 319.936431 175.344 
+Q 319.936431 180.6816 325.550215 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 477.1224 180.6816 
+L 613.9584 180.6816 
+Q 619.572185 180.6816 619.572185 175.344 
+L 619.572185 95.28 
+Q 619.572185 89.9424 613.9584 89.9424 
+L 477.1224 89.9424 
+Q 471.508615 89.9424 471.508615 95.28 
+L 471.508615 175.344 
+Q 471.508615 180.6816 477.1224 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 628.694585 180.6816 
+L 765.530585 180.6816 
+Q 771.144369 180.6816 771.144369 175.344 
+L 771.144369 95.28 
+Q 771.144369 89.9424 765.530585 89.9424 
+L 628.694585 89.9424 
+Q 623.0808 89.9424 623.0808 95.28 
+L 623.0808 175.344 
+Q 623.0808 180.6816 628.694585 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 780.266769 180.6816 
+L 917.102769 180.6816 
+Q 922.716554 180.6816 922.716554 175.344 
+L 922.716554 95.28 
+Q 922.716554 89.9424 917.102769 89.9424 
+L 780.266769 89.9424 
+Q 774.652985 89.9424 774.652985 95.28 
+L 774.652985 175.344 
+Q 774.652985 180.6816 780.266769 180.6816 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #ffffff; stroke: #cbd5e1; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 23.809292 280.7616 
+L 904.471754 280.7616 
+Q 910.085538 280.7616 910.085538 275.424 
+L 910.085538 228.72 
+Q 910.085538 223.3824 904.471754 223.3824 
+L 23.809292 223.3824 
+Q 18.195508 223.3824 18.195508 228.72 
+L 18.195508 275.424 
+Q 18.195508 280.7616 23.809292 280.7616 
+z
+" clip-path="url(#pfbec65cff2)" style="fill: #f0fdfa; stroke: #99f6e4; stroke-linejoin: miter"/>
+   </g>
+   <g id="text_1">
+    <text style="fill: #0f172a; font: 700 20px 'DejaVu Sans'; text-anchor: start" x="25.914462" y="37.2336" transform="rotate(-0 25.914462 37.2336)">German electricity forecasting pipeline</text>
+   </g>
+   <g id="text_2">
+    <text style="fill: #475569; font: 12px 'DejaVu Sans'; text-anchor: start" x="25.914462" y="63.2544" transform="rotate(-0 25.914462 63.2544)">Databricks serverless · PySpark engineering · Delta Lake storage</text>
+   </g>
+   <g id="text_3">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="90.823846" y="123.9696" transform="rotate(-0 90.823846 123.9696)">Original CSVs</text>
+   </g>
+   <g id="text_4">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="90.823846" y="151.992" transform="rotate(-0 90.823846 151.992)">SMARD hourly exports</text>
+   </g>
+   <g id="patch_9">
+    <path d="M 163.344596 135.312 
+Q 164.856864 135.312 164.69208 135.312 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 160.29208 133.112 
+L 164.69208 135.312 
+L 160.29208 137.512 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_5">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="242.396031" y="123.9696" transform="rotate(-0 242.396031 123.9696)">Raw Delta</text>
+   </g>
+   <g id="text_6">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="242.396031" y="151.992" transform="rotate(-0 242.396031 151.992)">Strings + source lineage</text>
+   </g>
+   <g id="patch_10">
+    <path d="M 314.916781 135.312 
+Q 316.429048 135.312 316.264265 135.312 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 311.864265 133.112 
+L 316.264265 135.312 
+L 311.864265 137.512 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_7">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="393.968215" y="123.9696" transform="rotate(-0 393.968215 123.9696)">Cleaned Delta</text>
+   </g>
+   <g id="text_8">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="393.968215" y="151.992" transform="rotate(-0 393.968215 151.992)">UTC + quality gates</text>
+   </g>
+   <g id="patch_11">
+    <path d="M 466.488965 135.312 
+Q 468.001233 135.312 467.83645 135.312 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 463.43645 133.112 
+L 467.83645 135.312 
+L 463.43645 137.512 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_9">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="545.5404" y="123.9696" transform="rotate(-0 545.5404 123.9696)">Feature Delta</text>
+   </g>
+   <g id="text_10">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="545.5404" y="151.992" transform="rotate(-0 545.5404 151.992)">Calendar + exact lags</text>
+   </g>
+   <g id="patch_12">
+    <path d="M 618.06115 135.312 
+Q 619.573418 135.312 619.408634 135.312 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 615.008634 133.112 
+L 619.408634 135.312 
+L 615.008634 137.512 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_11">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="697.112585" y="123.9696" transform="rotate(-0 697.112585 123.9696)">XGBoost</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="697.112585" y="151.992" transform="rotate(-0 697.112585 151.992)">Chronological evaluation</text>
+   </g>
+   <g id="patch_13">
+    <path d="M 769.633335 135.312 
+Q 771.145602 135.312 770.980819 135.312 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+    <path d="M 766.580819 133.112 
+L 770.980819 135.312 
+L 766.580819 137.512 
+" style="fill: none; stroke: #64748b; stroke-width: 1.5; stroke-linecap: round"/>
+   </g>
+   <g id="text_13">
+    <text style="fill: #0f766e; font: 700 12px 'DejaVu Sans'; text-anchor: middle" x="848.684769" y="123.9696" transform="rotate(-0 848.684769 123.9696)">Predictions</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #475569; font: 8.4px 'DejaVu Sans'; text-anchor: middle" x="848.684769" y="151.992" transform="rotate(-0 848.684769 151.992)">Saved model + pipeline</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #115e59; font: 12px 'DejaVu Sans'; text-anchor: middle" x="464.491385" y="251.4048" transform="rotate(-0 464.491385 251.4048)">Workflow dependencies + run IDs + config manifest + corrupted-data tests</text>
+   </g>
+   <g id="text_16">
+    <text style="fill: #475569; font: 9px 'DejaVu Sans'; text-anchor: start" x="25.914462" y="305.448" transform="rotate(-0 25.914462 305.448)">Forecasting uses calendar and prior prices; future actual generation/consumption are excluded.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pfbec65cff2">
+   <rect x="11.88" y="11.88" width="912.24" height="300.24"/>
+  </clipPath>
+ </defs>
+</svg>

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=70", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smard-engineering"
+version = "0.1.0"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy==1.26.4", "scipy==1.14.1", "joblib==1.4.2", "pandas==2.2.3", "scikit-learn==1.5.2", "xgboost==2.1.4", "PyYAML==6.0.2", "tzdata>=2024.1"]
+
+[project.optional-dependencies]
+local = ["pyspark==3.5.3", "delta-spark==3.2.1", "pyarrow==18.1.0"]
+test = ["pytest==8.3.5", "build==1.2.2"]
+visuals = ["matplotlib==3.9.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["spark: requires a local Spark JVM", "delta: requires Delta jars"]

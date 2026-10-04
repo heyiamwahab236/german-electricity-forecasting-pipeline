@@ -1,0 +1,105 @@
+bundle:
+  name: german-electricity-forecasting-pipeline
+variables:
+  notebook_root:
+    description: Folder containing imported learning notebooks
+    default: /Users/${workspace.current_user.userName}/Electricity Portfolio
+  config_path:
+    description: Absolute Volume path to your configured config.json
+resources:
+  jobs:
+    smard_pipeline:
+      name: German Electricity Forecasting Pipeline
+      description: Original SMARD CSVs to validated raw, cleaned and feature Delta
+        tables, chronological XGBoost evaluation and historical next-24-hour predictions.
+        Includes corrupted-data tests.
+      max_concurrent_runs: 1
+      timeout_seconds: 5400
+      tasks:
+      - task_key: ingestion
+        notebook_task:
+          notebook_path: ${var.notebook_root}/02_Raw_Ingestion
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+      - task_key: validation
+        notebook_task:
+          notebook_path: ${var.notebook_root}/03_Cleaned_Validation
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: ingestion
+      - task_key: joins
+        notebook_task:
+          notebook_path: ${var.notebook_root}/04_Join_Validation
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: validation
+      - task_key: features
+        notebook_task:
+          notebook_path: ${var.notebook_root}/05_Feature_Preparation
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: joins
+      - task_key: training_evaluation
+        notebook_task:
+          notebook_path: ${var.notebook_root}/06_Training_Evaluation
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: features
+        environment_key: modeling
+      - task_key: prediction
+        notebook_task:
+          notebook_path: ${var.notebook_root}/07_Prediction
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: training_evaluation
+        environment_key: modeling
+      - task_key: tests
+        notebook_task:
+          notebook_path: ${var.notebook_root}/08_Project_Tests
+          source: WORKSPACE
+          base_parameters:
+            run_id: '{{job.run_id}}'
+            config_path: ${var.config_path}
+        timeout_seconds: 1200
+        depends_on:
+        - task_key: prediction
+        environment_key: modeling
+      environments:
+      - environment_key: modeling
+        spec:
+          environment_version: '2'
+          dependencies:
+          - xgboost==2.1.4
+          - scikit-learn==1.5.2
+          - pandas==2.2.3
+          - numpy==1.26.4
+          - joblib==1.4.2
+          - pytest==8.3.5
+targets:
+  dev:
+    default: true
+    mode: development
+    workspace: {}

@@ -1,0 +1,7 @@
+Start date;End date;Price
+Jan 1, 2024 12:00 AM;Jan 1, 2024 1:00 AM;-15.00
+Jan 1, 2024 1:00 AM;Jan 1, 2024 2:00 AM;20.00
+Jan 1, 2024 1:00 AM;Jan 1, 2024 2:00 AM;21.00
+Jan 1, 2024 3:00 AM;Jan 1, 2024 4:00 AM;broken
+Jan 1, 2024 4:00 AM;Jan 1, 2024 5:00 AM;-
+not-a-date;Jan 1, 2024 6:00 AM;25.00

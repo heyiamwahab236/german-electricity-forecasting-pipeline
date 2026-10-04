@@ -1,0 +1,263 @@
+{
+  "recorded_on": "2026-10-04",
+  "state": "SUCCESS",
+  "publication_note": "Public configurable bundle reverified in a separate Databricks schema. Workspace identifiers omitted; measured outputs unchanged.",
+  "tasks": {
+    "tests": {
+      "state": "SUCCESS",
+      "result": {
+        "cases": {
+          "corrupted_csv": "passed",
+          "schema_drift": "passed",
+          "exact_lags_over_gap": "passed",
+          "unmatched_join": "passed",
+          "dst_pair_and_lone_ambiguity": "passed",
+          "negative_price_nullable_contract": "passed",
+          "chronological_duplicates": "passed",
+          "train_only_imputer_and_model_reload": "passed",
+          "warmup_no_backfill": "passed",
+          "purged_forecast_boundaries": "passed"
+        },
+        "passed": true
+      }
+    },
+    "training_evaluation": {
+      "state": "SUCCESS",
+      "result": {
+        "selected_parameters": {
+          "n_estimators": 200,
+          "max_depth": 4
+        },
+        "validation_mae_eur_mwh": 35.77988134429995,
+        "input_rows": 53256,
+        "warmup_rows_dropped": 48,
+        "purge_hours": 24,
+        "validation_candidates": [
+          {
+            "parameters": {
+              "n_estimators": 100,
+              "max_depth": 3
+            },
+            "mae_eur_mwh": 35.9188637559682
+          },
+          {
+            "parameters": {
+              "n_estimators": 200,
+              "max_depth": 4
+            },
+            "mae_eur_mwh": 35.77988134429995
+          }
+        ],
+        "test": {
+          "mae_eur_mwh": 26.871534111925683,
+          "rmse_eur_mwh": 39.694418350467046
+        },
+        "baseline_24h_test": {
+          "mae_eur_mwh": 28.26717628265364,
+          "rmse_eur_mwh": 44.59733790565309
+        },
+        "splits": {
+          "train": {
+            "rows": 31900,
+            "start": "2019-01-02 23:00:00",
+            "end": "2022-08-24 02:00:00"
+          },
+          "validation": {
+            "rows": 10618,
+            "start": "2022-08-25 03:00:00",
+            "end": "2023-11-10 12:00:00"
+          },
+          "test": {
+            "rows": 10642,
+            "start": "2023-11-11 13:00:00",
+            "end": "2025-01-27 22:00:00"
+          }
+        },
+        "evaluation_protocol": "rolling 24h horizon; assumes lagged prices available by origin t-24h; train-only fit, purged boundaries, validation selection, test once",
+        "environment": {
+          "xgboost": "2.1.4",
+          "scikit-learn": "1.5.2",
+          "pandas": "2.2.3",
+          "numpy": "1.26.4",
+          "joblib": "1.4.2"
+        },
+        "python_version": "3.11.10"
+      }
+    },
+    "prediction": {
+      "state": "SUCCESS",
+      "result": {
+        "rows": 24,
+        "as_of_utc": "2025-01-27 22:00:00",
+        "start_utc": "2025-01-27 23:00:00",
+        "end_utc": "2025-01-28 22:00:00",
+        "forecast_type": "historical_next_24h_demo"
+      }
+    },
+    "features": {
+      "state": "SUCCESS",
+      "result": {
+        "rows": 53256,
+        "missing_24h_lags": 24,
+        "missing_48h_lags": 48,
+        "lag_24h_mismatches": 0,
+        "lag_48h_mismatches": 0,
+        "passed": true
+      }
+    },
+    "ingestion": {
+      "state": "SUCCESS",
+      "result": {
+        "consumption": {
+          "business_columns": 5,
+          "format": "delta",
+          "rows": 53256,
+          "table": "<catalog>.<schema>.raw_consumption",
+          "unique_source_records": 53256
+        },
+        "generation": {
+          "business_columns": 14,
+          "format": "delta",
+          "rows": 53256,
+          "table": "<catalog>.<schema>.raw_generation",
+          "unique_source_records": 53256
+        },
+        "price": {
+          "business_columns": 19,
+          "format": "delta",
+          "negative_price_rows": 1489,
+          "rows": 53256,
+          "table": "<catalog>.<schema>.raw_price",
+          "unique_source_records": 53256
+        }
+      }
+    },
+    "validation": {
+      "state": "SUCCESS",
+      "result": {
+        "corrupted_sample_tests": "passed",
+        "datasets": {
+          "consumption": {
+            "conversion_errors": {},
+            "duplicate_extra_rows": 0,
+            "end_utc": "2025-01-27 22:00:00",
+            "forbidden_negatives": {
+              "consumption_mwh": 0,
+              "consumption_pumped_storage_mwh": 0
+            },
+            "missing_hourly_intervals": 0,
+            "nullable_contract": [],
+            "nulls": {
+              "consumption_mwh": 0,
+              "consumption_pumped_storage_mwh": 0,
+              "residual_load_mwh": 0,
+              "timestamp_utc": 0
+            },
+            "observed_negatives": {
+              "consumption_mwh": 0,
+              "consumption_pumped_storage_mwh": 0,
+              "residual_load_mwh": 130
+            },
+            "off_hour_rows": 0,
+            "passed": true,
+            "rows": 53256,
+            "source_chronology_failures": 0,
+            "start_utc": "2018-12-31 23:00:00"
+          },
+          "generation": {
+            "conversion_errors": {
+              "nuclear_mwh:missing": 8724
+            },
+            "duplicate_extra_rows": 0,
+            "end_utc": "2025-01-27 22:00:00",
+            "forbidden_negatives": {
+              "biomass_mwh": 0,
+              "fossil_gas_mwh": 0,
+              "generation_pumped_storage_mwh": 0,
+              "hard_coal_mwh": 0,
+              "hydropower_mwh": 0,
+              "lignite_mwh": 0,
+              "nuclear_mwh": 0,
+              "other_conventional_mwh": 0,
+              "other_renewable_mwh": 0,
+              "photovoltaics_mwh": 0,
+              "wind_offshore_mwh": 0,
+              "wind_onshore_mwh": 0
+            },
+            "missing_hourly_intervals": 0,
+            "nullable_contract": [
+              "nuclear_mwh"
+            ],
+            "nulls": {
+              "biomass_mwh": 0,
+              "fossil_gas_mwh": 0,
+              "generation_pumped_storage_mwh": 0,
+              "hard_coal_mwh": 0,
+              "hydropower_mwh": 0,
+              "lignite_mwh": 0,
+              "nuclear_mwh": 8724,
+              "other_conventional_mwh": 0,
+              "other_renewable_mwh": 0,
+              "photovoltaics_mwh": 0,
+              "timestamp_utc": 0,
+              "wind_offshore_mwh": 0,
+              "wind_onshore_mwh": 0
+            },
+            "observed_negatives": {
+              "biomass_mwh": 0,
+              "fossil_gas_mwh": 0,
+              "generation_pumped_storage_mwh": 0,
+              "hard_coal_mwh": 0,
+              "hydropower_mwh": 0,
+              "lignite_mwh": 0,
+              "nuclear_mwh": 0,
+              "other_conventional_mwh": 0,
+              "other_renewable_mwh": 0,
+              "photovoltaics_mwh": 0,
+              "wind_offshore_mwh": 0,
+              "wind_onshore_mwh": 0
+            },
+            "off_hour_rows": 0,
+            "passed": true,
+            "rows": 53256,
+            "source_chronology_failures": 0,
+            "start_utc": "2018-12-31 23:00:00"
+          },
+          "price": {
+            "conversion_errors": {},
+            "duplicate_extra_rows": 0,
+            "end_utc": "2025-01-27 22:00:00",
+            "forbidden_negatives": {},
+            "missing_hourly_intervals": 0,
+            "nullable_contract": [],
+            "nulls": {
+              "price_eur_mwh": 0,
+              "timestamp_utc": 0
+            },
+            "observed_negatives": {
+              "price_eur_mwh": 1489
+            },
+            "off_hour_rows": 0,
+            "passed": true,
+            "rows": 53256,
+            "source_chronology_failures": 0,
+            "start_utc": "2018-12-31 23:00:00"
+          }
+        },
+        "stage": "cleaned_only"
+      }
+    },
+    "joins": {
+      "state": "SUCCESS",
+      "result": {
+        "unmatched": {
+          "generation": 0,
+          "consumption": 0,
+          "price": 0
+        },
+        "rows": 53256,
+        "passed": true
+      }
+    }
+  }
+}

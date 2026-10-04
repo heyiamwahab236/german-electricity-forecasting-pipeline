@@ -1,0 +1,156 @@
+{
+  "description": "Schema contract for the original hourly English-format SMARD exports; reviewed from university project revision 8ef4b6a.",
+  "output_root": "/Volumes/<catalog>/<schema>/<volume>",
+  "datasets": {
+    "generation": {
+      "path": "/Volumes/<catalog>/<schema>/<volume>/source/Actual_generation_201901010000_202501280000_Hour.csv",
+      "delimiter": ";",
+      "expected_columns": [
+        "Start date",
+        "End date",
+        "Biomass [MWh] Calculated resolutions",
+        "Hydropower [MWh] Calculated resolutions",
+        "Wind offshore [MWh] Calculated resolutions",
+        "Wind onshore [MWh] Calculated resolutions",
+        "Photovoltaics [MWh] Calculated resolutions",
+        "Other renewable [MWh] Calculated resolutions",
+        "Nuclear [MWh] Calculated resolutions",
+        "Lignite [MWh] Calculated resolutions",
+        "Hard coal [MWh] Calculated resolutions",
+        "Fossil gas [MWh] Calculated resolutions",
+        "Hydro pumped storage [MWh] Calculated resolutions",
+        "Other conventional [MWh] Calculated resolutions"
+      ],
+      "timestamp_columns": [
+        "Start date"
+      ],
+      "timestamp_format": "%b %d, %Y %I:%M %p",
+      "timezone": "Europe/Berlin",
+      "locale": "en",
+      "dst_policy": "ordered_pair",
+      "numeric_columns": {
+        "Biomass [MWh] Calculated resolutions": "biomass_mwh",
+        "Hydropower [MWh] Calculated resolutions": "hydropower_mwh",
+        "Wind offshore [MWh] Calculated resolutions": "wind_offshore_mwh",
+        "Wind onshore [MWh] Calculated resolutions": "wind_onshore_mwh",
+        "Photovoltaics [MWh] Calculated resolutions": "photovoltaics_mwh",
+        "Other renewable [MWh] Calculated resolutions": "other_renewable_mwh",
+        "Nuclear [MWh] Calculated resolutions": "nuclear_mwh",
+        "Lignite [MWh] Calculated resolutions": "lignite_mwh",
+        "Hard coal [MWh] Calculated resolutions": "hard_coal_mwh",
+        "Fossil gas [MWh] Calculated resolutions": "fossil_gas_mwh",
+        "Hydro pumped storage [MWh] Calculated resolutions": "generation_pumped_storage_mwh",
+        "Other conventional [MWh] Calculated resolutions": "other_conventional_mwh"
+      },
+      "nonnegative": [
+        "biomass_mwh",
+        "hydropower_mwh",
+        "wind_offshore_mwh",
+        "wind_onshore_mwh",
+        "photovoltaics_mwh",
+        "other_renewable_mwh",
+        "nuclear_mwh",
+        "lignite_mwh",
+        "hard_coal_mwh",
+        "fossil_gas_mwh",
+        "generation_pumped_storage_mwh",
+        "other_conventional_mwh"
+      ],
+      "nullable": [
+        "nuclear_mwh"
+      ]
+    },
+    "consumption": {
+      "path": "/Volumes/<catalog>/<schema>/<volume>/source/Actual_consumption_201901010000_202501280000_Hour.csv",
+      "delimiter": ";",
+      "expected_columns": [
+        "Start date",
+        "End date",
+        "Total (grid load) [MWh] Calculated resolutions",
+        "Residual load [MWh] Calculated resolutions",
+        "Hydro pumped storage [MWh] Calculated resolutions"
+      ],
+      "timestamp_columns": [
+        "Start date"
+      ],
+      "timestamp_format": "%b %d, %Y %I:%M %p",
+      "timezone": "Europe/Berlin",
+      "locale": "en",
+      "dst_policy": "ordered_pair",
+      "numeric_columns": {
+        "Total (grid load) [MWh] Calculated resolutions": "consumption_mwh",
+        "Residual load [MWh] Calculated resolutions": "residual_load_mwh",
+        "Hydro pumped storage [MWh] Calculated resolutions": "consumption_pumped_storage_mwh"
+      },
+      "nonnegative": [
+        "consumption_mwh",
+        "consumption_pumped_storage_mwh"
+      ],
+      "nullable": []
+    },
+    "price": {
+      "path": "/Volumes/<catalog>/<schema>/<volume>/source/Day-ahead_prices_201901010000_202501280000_Hour.csv",
+      "delimiter": ";",
+      "expected_columns": [
+        "Start date",
+        "End date",
+        "Germany/Luxembourg [€/MWh] Original resolutions",
+        "∅ DE/LU neighbours [€/MWh] Original resolutions",
+        "Belgium [€/MWh] Original resolutions",
+        "Denmark 1 [€/MWh] Original resolutions",
+        "Denmark 2 [€/MWh] Original resolutions",
+        "France [€/MWh] Original resolutions",
+        "Netherlands [€/MWh] Original resolutions",
+        "Norway 2 [€/MWh] Original resolutions",
+        "Austria [€/MWh] Original resolutions",
+        "Poland [€/MWh] Original resolutions",
+        "Sweden 4 [€/MWh] Original resolutions",
+        "Switzerland [€/MWh] Original resolutions",
+        "Czech Republic [€/MWh] Original resolutions",
+        "DE/AT/LU [€/MWh] Original resolutions",
+        "Northern Italy [€/MWh] Original resolutions",
+        "Slovenia [€/MWh] Original resolutions",
+        "Hungary [€/MWh] Original resolutions"
+      ],
+      "timestamp_columns": [
+        "Start date"
+      ],
+      "timestamp_format": "%b %d, %Y %I:%M %p",
+      "timezone": "Europe/Berlin",
+      "locale": "en",
+      "dst_policy": "ordered_pair",
+      "numeric_columns": {
+        "Germany/Luxembourg [€/MWh] Original resolutions": "price_eur_mwh"
+      },
+      "nonnegative": [],
+      "nullable": []
+    }
+  },
+  "model": {
+    "features": [
+      "hour",
+      "day_of_week",
+      "month",
+      "is_weekend",
+      "hour_sin",
+      "hour_cos",
+      "price_lag_24h",
+      "price_lag_48h"
+    ],
+    "train_fraction": 0.6,
+    "validation_fraction": 0.2,
+    "max_rows": 200000,
+    "candidates": [
+      {
+        "n_estimators": 100,
+        "max_depth": 3
+      },
+      {
+        "n_estimators": 200,
+        "max_depth": 4
+      }
+    ],
+    "purge_hours": 24
+  },
+  "table_prefix": "<catalog>.<schema>"
+}
