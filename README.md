@@ -1,5 +1,9 @@
 # German Electricity Price Forecasting Pipeline
 
+![German electricity forecasting project cover](docs/project-cover.png)
+
+*Conceptual project illustration; chart values are illustrative.*
+
 [![Tests](https://github.com/heyiamwahab236/german-electricity-forecasting-pipeline/actions/workflows/tests.yml/badge.svg)](https://github.com/heyiamwahab236/german-electricity-forecasting-pipeline/actions/workflows/tests.yml)
 
 A Databricks and PySpark batch pipeline that turns original SMARD generation, consumption and day-ahead-price CSVs into validated Delta tables, forecasting features and historical XGBoost predictions.
